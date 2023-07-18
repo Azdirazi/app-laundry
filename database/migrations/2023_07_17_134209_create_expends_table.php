@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->date("do_expend");
             $table->mediumText("notes");
-            $table->integer("expend",11);
+            $table->integer("expend");
             $table->timestamps();
         });
     }

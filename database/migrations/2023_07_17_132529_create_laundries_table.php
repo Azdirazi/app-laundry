@@ -13,28 +13,28 @@ return new class extends Migration
     {
         Schema::create('laundries', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('costomer_id')
+            $table->foreignId('customers_id')
                 ->references('id')
-                ->on('costomers')
+                ->on('customers')
                 ->onDelete('CASCADE')
                 ->onUpdate('CASCADE');
-            $table->foreignId('user_id')
+            $table->foreignId('users_id')
                 ->references('id')
-                ->on('user')
+                ->on('users')
                 ->onDelete('CASCADE')
                 ->onUpdate('CASCADE');
-            $table->foreignId('type_id')
+            $table->foreignId('types_id')
                 ->references('id')
-                ->on('type')
+                ->on('types')
                 ->onDelete('CASCADE')
                 ->onUpdate('CASCADE');
             $table->date("do_receipt");
             $table->date("do_completion");
-            $table->integer("heavy",11);
+            $table->integer("heavy",);
             $table->tinyText('notes');
-            $table->integer("total_pay",11);
-            $table->integer("pay_status",11);
-            $table->integer("retrieval_status",11);
+            $table->integer("total_pay");
+            $table->integer("pay_status");
+            $table->integer("retrieval_status");
             $table->timestamps();
             
         });
