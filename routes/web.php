@@ -25,3 +25,6 @@ Route::get('/profile',function(){
 Route::get('/add-customer',function(){
     return view('add-customer');
 });
+Route::get('/transaksi',function(){
+    return view('transaksi');
+});
