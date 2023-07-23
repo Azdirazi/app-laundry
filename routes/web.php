@@ -28,3 +28,6 @@ Route::get('/add-customer',function(){
 Route::get('/transaksi',function(){
     return view('transaksi');
 });
+Route::get('/pengeluaran',function(){
+    return view('pengeluaran');
+});
