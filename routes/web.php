@@ -37,3 +37,9 @@ Route::get('/laporan',function(){
 Route::get('/add-customer',function(){
     return view('add-customer');
 });
+Route::get('/edit-customer',function(){
+    return view('edit-customer');
+});
+Route::get('/add-transaksi',function(){
+    return view('add-transaksi');
+});
