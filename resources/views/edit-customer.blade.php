@@ -3,7 +3,7 @@
 
 <head>
     @include('partials.meta')
-    <title>Laundry - Dashboard</title>
+    <title>Edit Pelanggan</title>
     @include('partials.css')
 </head>
 
