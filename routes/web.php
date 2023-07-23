@@ -43,3 +43,7 @@ Route::get('/edit-customer',function(){
 Route::get('/add-transaksi',function(){
     return view('add-transaksi');
 });
+Route::get('/edit-transaksi',function(){
+    return view('edit-transaksi');
+});
+
