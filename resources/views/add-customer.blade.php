@@ -31,24 +31,27 @@
                         
                     </div>
                     <div class="card card-body my-3">
-                            <a href="#" class="btn btn-primary col-lg-4 col-12 mb-4">
-                                <span class="fa fa-plus"></span>Tambah Pelanggan</a>
-                            <h5 class="card-title">Data Pelanggan</h5>
-                            <div class="table-responsive">
-                                <table class="table table-bordered table-hover table-striped" id="table-user">
-                                    <thead>
-                                        <tr>
-                                            <th>Nama Pelanggan</th>
-                                            <th>Jenis Kelamin</th>
-                                            <th>Alamat</th>
-                                            <th>No Telp</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                    </tbody>
-                                </table>
+                        <form class="my-3" enctype="multipart/form-data" action="">
+                            <input type="hidden" name="id" value="">
+                            <div class="mb-3">
+                                <label class="form-label" for="username">Nama Pelanggan<sup class="text-danger"></sup></label>
+                                <input type="text" id="Nama Pelanggan" name="Nama Pelanggan" value="" class="form-control">
                             </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="username">Alamat<sup class="text-danger"></sup></label>
+                                <div class="col-sm-20">
+                                <textarea name="alamat" id="example-text-input" cols="20" rows="5" placeholder="Masukkan Alamat"></textarea>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="username">No.Telpon<sup class="text-danger"></sup></label>
+                                <input type="text" id="no.telpon" name="no.telpon" value="" class="form-control">
+                            </div>
+                            <div class="d-flex justify-content-start mt-5">
+                                <button type="submit" name="profile" class="btn btn-primary mr-2">Simpan</button>
+                                <button type="reset" class="btn btn-danger mx-2">Batal</button>
+                            </div>
+                        </form>        
                     </div>
 
             

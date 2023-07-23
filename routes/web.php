@@ -22,8 +22,8 @@ Route::get('/index',function(){
 Route::get('/profile',function(){
     return view('profile');
 });
-Route::get('/add-customer',function(){
-    return view('add-customer');
+Route::get('/customer',function(){
+    return view('customer');
 });
 Route::get('/transaksi',function(){
     return view('transaksi');
@@ -33,4 +33,7 @@ Route::get('/pengeluaran',function(){
 });
 Route::get('/laporan',function(){
     return view('laporan');
+});
+Route::get('/add-customer',function(){
+    return view('add-customer');
 });
