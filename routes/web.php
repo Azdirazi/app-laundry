@@ -22,3 +22,6 @@ Route::get('/index',function(){
 Route::get('/profile',function(){
     return view('profile');
 });
+Route::get('/add-customer',function(){
+    return view('add-customer');
+});
