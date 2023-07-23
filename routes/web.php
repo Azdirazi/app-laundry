@@ -46,4 +46,10 @@ Route::get('/add-transaksi',function(){
 Route::get('/edit-transaksi',function(){
     return view('edit-transaksi');
 });
+Route::get('/add-pengeluaran',function(){
+    return view('add-pengeluaran');
+});
+Route::get('/edit-pengeluaran',function(){
+    return view('edit-pengeluaran');
+});
 
