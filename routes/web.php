@@ -31,3 +31,6 @@ Route::get('/transaksi',function(){
 Route::get('/pengeluaran',function(){
     return view('pengeluaran');
 });
+Route::get('/laporan',function(){
+    return view('laporan');
+});
