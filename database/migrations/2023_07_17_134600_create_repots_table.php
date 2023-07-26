@@ -13,7 +13,21 @@ return new class extends Migration
     {
         Schema::create('repots', function (Blueprint $table) {
             $table->id();
+            $table->date("date_report");
+            $table->integer("desc_report");
+            $table->tinyText("note");
+            $table->foreignId('laundries_id')
+                ->references('id')
+                ->on('laundries')
+                ->onDelete('CASCADE')
+                ->onUpdate('CASCADE');
             $table->timestamps();
+            $table->integer("income");
+            $table->foreignId('expends_id')
+                ->references('id')
+                ->on('expends')
+                ->onDelete('CASCADE')
+                ->onUpdate('CASCADE');
         });
     }
 

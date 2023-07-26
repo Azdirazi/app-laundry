@@ -38,13 +38,13 @@
 <!-- Nav Item - Tables -->
 <li class="nav-item">
     <a class="nav-link" href="tables.html">
-        <i class="fas fa-fw fa-table"></i>
+        <i class="fa fa-cart-plus"></i>
         <span>Transkasi Laundry</span></a>
 </li>
 
 <li class="nav-item">
     <a class="nav-link" href="charts.html">
-        <i class="fa fa-users"></i>
+        <i class="fa fa-book"></i>
         <span>Data Pengeluaran </span>
     </a>
 </li>
@@ -52,7 +52,7 @@
 
 <li class="nav-item">
     <a class="nav-link" href="tables.html">
-        <i class="fas fa-fw fa-table"></i>
+        <i class="fa fa-book"></i>
         <span>Data Laporan</span></a>
 </li>
 

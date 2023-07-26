@@ -60,8 +60,9 @@
                             <div class="mb-3">
                                 <label class="form-label" for="username">Catatan<sup class="text-danger"></sup></label>
                                 <div class="col-sm-20">
-                                <textarea name="alamat" id="example-text-input" cols="20" rows="5" placeholder="Masukkan Alamat"></textarea>
+                                    <textarea name="alamat" id="example-text-input" cols="20" rows="5" placeholder="Masukkan Alamat"></textarea>
                                 </div>
+                            </div>
                             <div class="mb-3">
                                 <label class="form-label" for="username">Status<sup class="text-danger"></sup></label>
                                 <input type="text" id="no.telpon" name="no.telpon" value="" class="form-control">
@@ -82,7 +83,7 @@
             </div>
             <!-- End of Main Content -->
 
-           @include('partials.footer')
+          @include('partials.footer')
 
         </div>
         <!-- End of Content Wrapper -->

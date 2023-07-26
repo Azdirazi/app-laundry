@@ -29,33 +29,33 @@
                     </div>
                     <div class="d-flex flex-column justify-content-center">
                          <div class="card card-body">
-                         <form class="my-3" enctype="multipart/form-data" action="">
-                              <input type="hidden" name="id" value="">
-                              <div class="mb-3"><
-                                   <label class="form-label d-block" for="foto">Foto <sup class="text-danger">*</sup></label>
-                                   <img id="img-preview" class="my-2"  width="200" src="#">
-                                   <div class="custom-file form-control">
-                                        <input name="foto" type="file" class="custom-file-input" id="validatedInputGroupCustomFile" >
-                                        <label class="custom-file-label"   for="validatedInputGroupCustomFile">Choose file...</label>
+                              <form class="my-3" enctype="multipart/form-data" action="">
+                                   <input type="hidden" name="id" value="">
+                                   <div class="mb-3"><
+                                        <label class="form-label d-block" for="foto">Foto <sup class="text-danger">*</sup></label>
+                                        <img id="img-preview" class="my-2"  width="200" src="#">
+                                        <div class="custom-file form-control">
+                                             <input name="foto" type="file" class="custom-file-input" id="validatedInputGroupCustomFile" >
+                                             <label class="custom-file-label"   for="validatedInputGroupCustomFile">Choose file...</label>
+                                        </div>
                                    </div>
-                              </div>
-                              <div class="mb-3">
-                                   <label class="form-label" for="username">Username <sup class="text-danger">*</sup></label>
-                                   <input type="text" id="username" name="username" value="" class="form-control">
-                              </div>
-                              <div class="mb-3">
-                                   <label class="form-label" for="nama">Nama <sup class="text-danger">*</sup></label>
-                                   <input type="text" id="nama" name="nama" value="" class="text-capitalize form-control" >
-                              </div>
-                              <div class="mb-3">
-                                   <label class="form-label" for="nama">No.Telepon <sup class="text-danger">*</sup></label>
-                                   <input type="text" id="nama" name="nama" value="" class="text-capitalize form-control" >
-                              </div>
-                              <div class="d-flex justify-content-start mt-5">
-                                    <button type="submit" name="profile" class="btn btn-primary mr-2">Simpan</button>
-                                    <button type="reset"  class="btn btn-danger mx-2">Batal</button>
-                              </div>
-                         </form>
+                                   <div class="mb-3">
+                                        <label class="form-label" for="username">Username <sup class="text-danger">*</sup></label>
+                                        <input type="text" id="username" name="username" value="" class="form-control">
+                                   </div>
+                                   <div class="mb-3">
+                                        <label class="form-label" for="nama">Nama <sup class="text-danger">*</sup></label>
+                                        <input type="text" id="nama" name="nama" value="" class="text-capitalize form-control" >
+                                   </div>
+                                   <div class="mb-3">
+                                        <label class="form-label" for="nama">No.Telepon <sup class="text-danger">*</sup></label>
+                                        <input type="text" id="nama" name="nama" value="" class="text-capitalize form-control" >
+                                   </div>
+                                   <div class="d-flex justify-content-start mt-5">
+                                        <button type="submit" name="profile" class="btn btn-primary mr-2">Simpan</button>
+                                        <button type="reset"  class="btn btn-danger mx-2">Batal</button>
+                                   </div>
+                              </form>
                          </div>
                     </div>
                      
