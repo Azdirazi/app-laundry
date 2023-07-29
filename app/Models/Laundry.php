@@ -21,7 +21,8 @@ class Laundry extends Model
         'notes',
         'total_pay',
         'pay_status',
-        'retrieval_status',
-       
+        'retrieval_status', 
     ];
+
+
 }

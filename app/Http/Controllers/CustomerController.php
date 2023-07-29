@@ -2,44 +2,45 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\Customer;
+use App\Models\Custumer;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
 
-    public function getUser(User $user)
+    public function getCustomer(Customer $customer)
     {
-        $dataUser = $user->get();
+        $dataCustomer = $customer->get();
         // $dataUser = $user->where('id', auth()->user()->id)->get();
-        return view('user.users', compact('dataUser')); 
+        return view('customer.customers', compact('dataCustomer')); 
        
     }
     
     public function tambah()
     {
-        return view('user.add-users');
+        return view('customer.customers');
     }
 
-    public function edit(User $user)
+    public function edit(Customer $customer)
     {
-        return view('user.edit-users', compact('user'));
+        return view('customer.customers', compact('customer'));
     }
 
-    public function saveUser(User $user, Request $userRequest)
+    public function saveUser(Customer $customer, Request $userRequest)
     {
         $data = $userRequest->all();
         $data['password'] = bcrypt($userRequest->password);
-        $user->create($data);
+        $customer->create($data);
         return redirect(route('user.getUser'))->with('success', 'Data user berhasil ditambahkan');
     }
-    public function deleteUser(User $user)
+    public function deleteUser(Customer $customer)
     {
-        $user->delete();
+        $customer->delete();
         return back()->with(['success' => 'Data berhasil dihapus']);
         
     }
-    public function updateUser(User $user, Request $userRequest)
+    public function updatecustomer(Customer $customer, Request $userRequest)
     {
         $data = $userRequest->all();
 

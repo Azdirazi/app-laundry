@@ -16,4 +16,9 @@ class Type extends Model
         'proces',
         'rates',
     ];
+
+    public function Laundry()
+    {
+        return $this->hasOne(Laundry::class);
+    }
 }

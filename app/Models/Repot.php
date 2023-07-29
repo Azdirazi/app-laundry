@@ -13,12 +13,8 @@ class Repot extends Model
 
 
 
-    public function Expand()
-    {
-        return $this->hasMany(Expand::class);
-    }
     public function Laundry()
     {
-        return $this->hasMany(Laundry::class);
+        return $this->hasOne(Laundry::class);
     }
 }

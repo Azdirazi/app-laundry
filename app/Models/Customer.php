@@ -18,4 +18,9 @@ class Customer extends Model
         'phone',
         'img',
     ];
+
+    public function Laundry()
+    {
+        return $this->hasOne(Laundry::class);
+    }
 }

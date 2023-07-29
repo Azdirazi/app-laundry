@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('gender', 15);
             $table->longText('address');
             $table->string('phone', 20);
-            $table->string('img');
-            $table->string('level');
+            $table->string('img')->nullable();
+            $table->string('level',10);
             $table->timestamps();
         });
     }

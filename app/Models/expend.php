@@ -19,7 +19,7 @@ class Expend extends Model
 
     public function Repot()
     {
-        return $this->belongsTo(Repot::class);
+        return $this->hasOne(Repot::class);
     }
 }
 

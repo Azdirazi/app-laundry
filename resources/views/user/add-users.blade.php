@@ -27,11 +27,12 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Data Pelanggan</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Tambah User</h1>
                         
                     </div>
                     <div class="card card-body my-3">
-                         <form class="my-3" enctype="multipart/form-data" action="">
+                         <form class="my-3" enctype="multipart/form-data" action="{{route('user.saveUser')}}" method="POST">
+                              @csrf
                               <div class="row"> 
                                    <div class="col-lg-12 col-12 mb-2">
                                         <label class="form-label">Username <sup class="text-danger">*</sup></label>
@@ -39,7 +40,7 @@
                                    </div>
                                    <div class="col-lg-12 col-12 mb-2">
                                         <label class="form-label">Password <sup class="text-danger">*</sup></label>
-                                        <input type="text" class="form-control desimal-input" name="password"required>
+                                        <input type="password" class="form-control desimal-input" name="password"required>
                                    </div>
                                    <div class="col-lg-12 col-12 mb-2">
                                         <label class="form-label">Nama <sup class="text-danger">*</sup></label>
@@ -69,11 +70,15 @@
                                         </div>
                                    </div>
                                    <div class="col-lg-12 col-12 mb-2">
+                                        <label class="form-label" for="nama">No.Telepon <sup class="text-danger">*</sup></label>
+                                        <input type="tel" id="nama" name="phone" value="" class="text-capitalize form-control" >
+                                   </div>
+                                   <div class="col-lg-12 col-12 mb-2">
                                         <label class="form-label">Jabatan<sup class="text-danger">*</sup></label>
-                                        <select id="role" name="role" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref"required>
+                                        <select id="role" name="level" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref"required>
                                              <option selected value="">Pilih...</option>
-                                             <option value="1">Admin</option>
-                                             <option value="2">Kasir</option>
+                                             <option value="Admin">Admin</option>
+                                             <option value="Kasir">Kasir</option>
                                         </select>
                                    </div>
                                    <div class="d-flex justify-content-start mt-5">
