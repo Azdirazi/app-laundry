@@ -31,7 +31,7 @@
                         
                     </div>
                     <div class="card card-body my-3">
-                            <a href="#" class="btn btn-primary col-lg-4 col-12 mb-4">
+                            <a href="{{ route('customer.tambah') }}" class="btn btn-primary col-lg-4 col-12 mb-4">
                                 <span class="fa fa-plus"></span>Tambah Pelanggan</a>
                             <h5 class="card-title">Data Pelanggan</h5>
                             <div class="table-responsive">

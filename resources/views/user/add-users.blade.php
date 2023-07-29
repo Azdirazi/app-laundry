@@ -71,7 +71,7 @@
                                    </div>
                                    <div class="col-lg-12 col-12 mb-2">
                                         <label class="form-label" for="nama">No.Telepon <sup class="text-danger">*</sup></label>
-                                        <input type="tel" id="nama" name="phone" value="" class="text-capitalize form-control" >
+                                        <input type="tel" id="phone" name="phone" value="" class="text-capitalize form-control" >
                                    </div>
                                    <div class="col-lg-12 col-12 mb-2">
                                         <label class="form-label">Jabatan<sup class="text-danger">*</sup></label>

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CustomerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +22,16 @@ Route::controller(UserController::class)->name('user.')->group(function () {
           Route::post('/user/simpan', 'saveUser')->name('saveUser');
           Route::patch('/user/update/{user}', 'updateUser')->name('updateUser');
           Route::delete('/user/hapus/{user}', 'deleteUser')->name('deleteUser');
-     });
+        });
+ Route::controller(CustomerController::class)->name('customer.')->group(function () {
+            Route::get('/customer/customers', 'getCustomer')->name('getCustomer');
+            Route::get('/customer/add-customers', 'tambah')->name('tambah');
+            Route::get('/customer/edit/{customer}', 'edit')->name('edit');
+            Route::post('/customer/simpan', 'saveCustomer')->name('saveCustomer');
+            Route::patch('/customer/update/{customer}', 'updatecustomer')->name('updateCustomer');
+            Route::delete('/customer/hapus/{customer}', 'deletecustomer')->name('deleteCustomer');
+       });
+
 Route::get('/login',function(){
     return view('login');
 });

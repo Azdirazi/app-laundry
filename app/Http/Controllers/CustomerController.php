@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Customer;
-use App\Models\Custumer;
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class CustomerController extends Controller
 {
 
     public function getCustomer(Customer $customer)
@@ -19,35 +18,30 @@ class UserController extends Controller
     
     public function tambah()
     {
-        return view('customer.customers');
+        return view('customer.add-customers');
     }
 
     public function edit(Customer $customer)
     {
-        return view('customer.customers', compact('customer'));
+        return view('customer.edit-customers', compact('customer'));
     }
 
-    public function saveUser(Customer $customer, Request $userRequest)
+    public function saveCustomer(Customer $customer, Request $customerRequest)
     {
-        $data = $userRequest->all();
-        $data['password'] = bcrypt($userRequest->password);
+        $data = $customerRequest->all();
         $customer->create($data);
-        return redirect(route('user.getUser'))->with('success', 'Data user berhasil ditambahkan');
+        return redirect(route('customer.getCustomer'))->with('success', 'Data user berhasil ditambahkan');
     }
-    public function deleteUser(Customer $customer)
+    public function deleteCustomer(Customer $customer)
     {
         $customer->delete();
         return back()->with(['success' => 'Data berhasil dihapus']);
         
     }
-    public function updatecustomer(Customer $customer, Request $userRequest)
+    public function updateCustomer(Customer $customer, Request $customerRequest)
     {
-        $data = $userRequest->all();
-
-        if ($userRequest->password) {
-            $data['password'] = bcrypt($userRequest->password);
-        }
-        $user->update($data);
-        return redirect(route('user.getUser'))->with('success', 'Data user berhasil diubah');
+        $data = $customerRequest->all();
+        $customer->update($data);
+        return redirect(route('customer.getCustomer'))->with('success', 'Data user berhasil diubah');
     }
 }
