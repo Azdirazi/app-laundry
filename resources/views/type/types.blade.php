@@ -3,7 +3,7 @@
 
 <head>
     @include('partials.meta')
-    <title>Users</title>
+    <title>Jenis Laundry</title>
     @include('partials.css')
 </head>
 
@@ -27,39 +27,32 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Data User</h1> 
+                        <h1 class="h3 mb-0 text-gray-800">Data Jenis Laundry</h1>
+                        
                     </div>
                     <div class="card card-body my-3">
-                            <a href="{{ route('user.tambah') }}" class="btn btn-primary col-lg-4 col-12 mb-4">
-                                <span class="fa fa-plus"></span>Tambah User</a>
-                            <h5 class="card-title">Data User</h5>
+                            <a href="#" class="btn btn-primary col-lg-4 col-12 mb-4">
+                                <span class="fa fa-plus"></span>Tambah Jenis Laundry</a>
+                            <h5 class="card-title">Data Jenis Laundry</h5>
                             <div class="table-responsive">
                                 <table class="table table-bordered table-hover table-striped" id="table-user">
                                     <thead>
                                         <tr>
-                                            <th  scope="col">NO</th>
-                                            <th  scope="col">Foto</th>
-                                            <th  scope="col">Username</th>
-                                            <th  scope="col">Nama</th>
-                                            <th  scope="col">Jenis Kelamin </th>
-                                            <th  scope="col">Alamat</th>
-                                            <th  scope="col">No Telp</th>
-                                            <th  scope="col">Jabatan</th>
-                                            <th  scope="col">Action</th>
+                                            <th>No</th>
+                                            <th>Jenis Laundry</th>
+                                            <th>Lama Proses</th>
+                                            <th>Harga</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach($dataUser as $index => $user)
+                                    @foreach($dataUser as $index => $user)
                                             <tr>
                                                 <td scope="col">{{ ++$index }}</td>
-                                                <td scope="col">{{ $user->img}}</td>
-                                                <td scope="col">{{ $user->username }}</td>
-                                                <td scope="col">{{ $user->name }}</td>
-                                                <td scope="col">{{ $user->gender }}</td>
-                                                <td scope="col">{{ $user->address }}</td>
-                                                <td scope="col">{{ $user->phone }}</td>
-                                                <td scope="col">{{ $user->level }}</td>
-                                                <td>
+                                                <td scope="col">{{ $type->img}}</td>
+                                                <td scope="col">{{ $type->username }}</td>
+                                                <td scope="col">{{ $type->name }}</td>
+                                                <td scope="col">
                                                     <div class="input-group mb-3">
                                                         <span class="input-group-text border-0">
                                                             <a href="{{route('user.edit',[$user->id])}}" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i>Edit</a>

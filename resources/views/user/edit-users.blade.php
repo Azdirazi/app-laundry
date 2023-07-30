@@ -3,7 +3,7 @@
 
 <head>
     @include('partials.meta')
-    <title>Tambah Users</title>
+    <title>Edit Users</title>
     @include('partials.css')
 </head>
 
@@ -27,27 +27,28 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Tambah User</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Edit User</h1>
                         
                     </div>
                     <div class="card card-body my-3">
-                         <form class="my-3" enctype="multipart/form-data" action="{{route('user.saveUser')}}" method="POST">
+                         <form class="my-3" enctype="multipart/form-data" action="{{route('user.updateUser',$user->id)}}" method="POST">
                               @csrf
+                              @method('PATCH')
                               <div class="row"> 
                                    <div class="col-lg-12 col-12 mb-2">
-                                        <label class="form-label">Username <sup class="text-danger">*</sup></label>
-                                        <input type="text" class="form-control desimal-input" name="username"required>
+                                        <label class="form-label">Username </label>
+                                        <input type="text" value="{{ old('username') ?? $user->username}}" class="form-control desimal-input" name="username">
                                    </div>
                                    <div class="col-lg-12 col-12 mb-2">
-                                        <label class="form-label">Password <sup class="text-danger">*</sup></label>
-                                        <input type="password" class="form-control desimal-input" name="password"required>
+                                        <label class="form-label">Password </label>
+                                        <input type="password" class="form-control desimal-input" name="password">
                                    </div>
                                    <div class="col-lg-12 col-12 mb-2">
-                                        <label class="form-label">Nama <sup class="text-danger">*</sup></label>
-                                        <input type="text" class="form-control desimal-input" name="name"required>
+                                        <label class="form-label">Nama </label>
+                                        <input type="text" value="{{ old('name') ?? $user->name}}" class="form-control desimal-input" name="name">
                                    </div>
                                    <div class="col-lg-12 col-12 mb-2">
-                                        <label class="col-sm-2 col-form-label">Jenis Kelamin <sup class="text-danger">*</sup> </label>
+                                        <label class="col-sm-2 col-form-label">Jenis Kelamin</label>
                                         <div class="col-md-9">
                                              <div class="form-check-inline my-1">
                                              <div class="custom-control custom-radio">
@@ -66,17 +67,17 @@
                                    <div class="col-lg-12 col-12 mb-2">
                                         <label class="form-label" for="address">Alamat<sup class="text-danger"></sup></label>
                                         <div class="col-sm-20">
-                                             <textarea class="col-lg-12" name="address" id="example-text-input" cols="20" rows="5" placeholder="Masukkan Alamat"></textarea>
+                                             <textarea class="col-lg-12" name="address" id="example-text-input" cols="20" rows="5" placeholder="Masukkan Alamat">{{ $user->address}}</textarea>
                                         </div>
                                    </div>
                                    <div class="col-lg-12 col-12 mb-2">
-                                        <label class="form-label" for="nama">No.Telepon <sup class="text-danger">*</sup></label>
-                                        <input type="tel" id="phone" name="phone" value="" class="text-capitalize form-control" >
+                                        <label class="form-label" for="nama">No.Telepon </label>
+                                        <input type="tel" id="phone" name="phone" value="{{ old('phone') ?? $user->phone}}" class="text-capitalize form-control" >
                                    </div>
                                    <div class="col-lg-12 col-12 mb-2">
-                                        <label class="form-label">Jabatan<sup class="text-danger">*</sup></label>
-                                        <select id="role" name="level" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref"required>
-                                             <option selected value="">Pilih...</option>
+                                        <label class="form-label">Jabatan</label>
+                                        <select id="role" name="level" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                                             <option selected value="">{{ $user->level}}</option>
                                              <option value="Admin">Admin</option>
                                              <option value="Kasir">Kasir</option>
                                         </select>

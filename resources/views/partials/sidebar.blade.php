@@ -27,9 +27,16 @@
     Interface
 </div>
 
-<!-- Nav Item - Charts -->
+<!-- Nav Item - Data User -->
 <li class="nav-item">
-    <a class="nav-link" href="charts.html">
+    <a class="nav-link" href="{{ route('user.getUser') }}">
+        <i class="fa fa-users"></i>
+        <span>Data User </span>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a class="nav-link" href="{{ route('customer.getCustomer') }}">
         <i class="fa fa-users"></i>
         <span>Data Pelanggan </span>
     </a>

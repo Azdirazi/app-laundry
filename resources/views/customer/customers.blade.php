@@ -35,17 +35,42 @@
                                 <span class="fa fa-plus"></span>Tambah Pelanggan</a>
                             <h5 class="card-title">Data Pelanggan</h5>
                             <div class="table-responsive">
-                                <table class="table table-bordered table-hover table-striped" id="table-user">
+                                <table class="table table-bordered table-hover table-striped" id="table-customer">
                                     <thead>
                                         <tr>
-                                            <th>Nama Pelanggan</th>
-                                            <th>Jenis Kelamin</th>
-                                            <th>Alamat</th>
-                                            <th>No Telp</th>
-                                            <th>Action</th>
+                                            <th scope="col">NO</th>
+                                            <th scope="col">Foto</th>
+                                            <th scope="col">Nama Pelanggan</th>
+                                            <th scope="col">Jenis Kelamin</th>
+                                            <th scope="col">Alamat</th>
+                                            <th scope="col">No Telp</th>
+                                            <th scope="col">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    @foreach($dataCustomer as $index => $customer)
+                                            <tr>
+                                                <td scope="col">{{ ++$index }}</td>
+                                                <td scope="col">{{ $customer->img}}</td>
+                                                <td scope="col">{{ $customer->name }}</td>
+                                                <td scope="col">{{ $customer->gender }}</td>
+                                                <td scope="col">{{ $customer->address }}</td>
+                                                <td scope="col">{{ $customer->phone }}</td>
+                                                <td>
+                                                    <div class="input-group mb-3">
+                                                        <span class="input-group-text border-0">
+                                                            <a href="{{route('customer.edit',[$customer->id])}}" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i>Edit</a>
+                                                        </span><span class="input-group-text border-0">
+                                                            <form onsubmit="return confirm('Data pengguna akan dihapus ?')" action=" {{route('customer.deleteCustomer',$customer->id)}}" method="POST" ">
+                                                                        @csrf
+                                                                        @method('DELETE')
+                                                                        <button type=" submit" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Hapus</button>
+                                                            </form>
+                                                        </span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

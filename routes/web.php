@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\TypeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,14 +24,22 @@ Route::controller(UserController::class)->name('user.')->group(function () {
           Route::patch('/user/update/{user}', 'updateUser')->name('updateUser');
           Route::delete('/user/hapus/{user}', 'deleteUser')->name('deleteUser');
         });
- Route::controller(CustomerController::class)->name('customer.')->group(function () {
-            Route::get('/customer/customers', 'getCustomer')->name('getCustomer');
-            Route::get('/customer/add-customers', 'tambah')->name('tambah');
-            Route::get('/customer/edit/{customer}', 'edit')->name('edit');
-            Route::post('/customer/simpan', 'saveCustomer')->name('saveCustomer');
-            Route::patch('/customer/update/{customer}', 'updatecustomer')->name('updateCustomer');
-            Route::delete('/customer/hapus/{customer}', 'deletecustomer')->name('deleteCustomer');
+Route::controller(CustomerController::class)->name('customer.')->group(function () {
+        Route::get('/customer/customers', 'getCustomer')->name('getCustomer');
+        Route::get('/customer/add-customers', 'tambah')->name('tambah');
+        Route::get('/customer/edit/{customer}', 'edit')->name('edit');
+        Route::post('/customer/simpan', 'saveCustomer')->name('saveCustomer');
+        Route::patch('/customer/update/{customer}', 'updateCustomer')->name('updateCustomer');
+        Route::delete('/customer/hapus/{customer}', 'deleteCustomer')->name('deleteCustomer');
        });
+Route::controller(TypeController::class)->name('type.')->group(function () {
+        Route::get('/type/types', 'getType')->name('getType');
+        Route::get('/type/add-types', 'tambah')->name('tambah');
+        Route::get('/type/edit/{type}', 'edit')->name('edit');
+        Route::post('/type/simpan', 'saveType')->name('saveType');
+        Route::patch('/type/update/{type}', 'updateType')->name('updateType');
+        Route::delete('/type/hapus/{type}', 'deleteType')->name('deleteType');
+        });
 
 Route::get('/login',function(){
     return view('login');
@@ -45,11 +54,13 @@ Route::get('/index',function(){
 Route::get('/profile',function(){
     return view('profile');
 });
-Route::get('/customer',function(){
-    return view('customer');
-});
+
+Route::get('/laundry',function(){
+    return view('laundry');
+}); 
+
 Route::get('/transaksi',function(){
-    return view('transaksi');
+    return view('transaction.transaksi');
 });
 Route::get('/pengeluaran',function(){
     return view('pengeluaran');
@@ -59,9 +70,6 @@ Route::get('/laporan',function(){
 });
 Route::get('/add-customer',function(){
     return view('add-customer');
-});
-Route::get('/edit-customer',function(){
-    return view('edit-customer');
 });
 Route::get('/add-transaksi',function(){
     return view('add-transaksi');

@@ -3,7 +3,7 @@
 
 <head>
     @include('partials.meta')
-    <title>Jenis Laundry</title>
+    <title>Tambah Jenis Laundry</title>
     @include('partials.css')
 </head>
 
@@ -27,27 +27,26 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Data Jenis Laundry</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Tambah Jenis Laundry</h1>
                         
                     </div>
                     <div class="card card-body my-3">
-                            <a href="#" class="btn btn-primary col-lg-4 col-12 mb-4">
-                                <span class="fa fa-plus"></span>Tambah Jenis Laundry</a>
-                            <h5 class="card-title">Data Jenis Laundry</h5>
-                            <div class="table-responsive">
-                                <table class="table table-bordered table-hover table-striped" id="table-user">
-                                    <thead>
-                                        <tr>
-                                            <th>Tipe</th>
-                                            <th>Harga</th>
-                                            <th>Lama Proses</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                    </tbody>
-                                </table>
+                        <form class="my-3" enctype="multipart/form-data" action="{{route('customer.saveCustomer')}}" method="POST">
+                            @csrf
+                            <input type="hidden" name="id" value="">
+                            <div class="col-lg-12 col-12 mb-2 ">
+                                <label class="form-label" for="username">Nama Pelanggan<sup class="text-danger"></sup></label>
+                                <input type="text" id="name" name="name" value="" class="form-control">
                             </div>
+                            <div class="col-lg-12 col-12 mb-2">
+                                <label class="form-label" for="phone">No.Telpon<sup class="text-danger"></sup></label>
+                                <input type="text" id="phone" name="phone" value="" class="form-control">
+                            </div>
+                            <div class="d-flex justify-content-start mt-5">
+                                <button type="submit" name="profile" class="btn btn-primary mr-2">Simpan</button>
+                                <button type="reset" class="btn btn-danger mx-2">Batal</button>
+                            </div>
+                        </form>        
                     </div>
 
             
