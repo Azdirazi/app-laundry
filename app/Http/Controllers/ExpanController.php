@@ -20,4 +20,9 @@ class ExpanController extends Controller
     {
         //
     }
+
+    public function show(string $id)
+    {
+        //
+    }
 }
