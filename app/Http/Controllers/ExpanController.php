@@ -35,4 +35,9 @@ class ExpanController extends Controller
     {
         //
     }
+
+    public function destroy(string $id)
+    {
+        //
+    }
 }
