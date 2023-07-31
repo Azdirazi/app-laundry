@@ -10,4 +10,9 @@ class LaundryController extends Controller
     {
         //
     }
+
+    public function create()
+    {
+        //
+    }
 }
