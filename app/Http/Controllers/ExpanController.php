@@ -10,4 +10,9 @@ class ExpanController extends Controller
     {
         //
     }
+
+    public function create()
+    {
+        //
+    }
 }
