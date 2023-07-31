@@ -15,4 +15,9 @@ class LaundryController extends Controller
     {
         //
     }
+
+    public function store(Request $request)
+    {
+        //
+    }
 }
