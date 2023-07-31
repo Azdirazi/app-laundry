@@ -35,4 +35,9 @@ class LaundryController extends Controller
     {
         //
     }
+
+    public function destroy(string $id)
+    {
+        //
+    }
 }
