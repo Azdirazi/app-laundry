@@ -35,4 +35,9 @@ class TypeController extends Controller
     {
         //
     }
+
+    public function destroy(string $id)
+    {
+        //
+    }
 }
