@@ -6,5 +6,8 @@ use Illuminate\Http\Request;
 
 class LaundryController extends Controller
 {
-    
+    public function index()
+    {
+        //
+    }
 }
