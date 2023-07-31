@@ -9,7 +9,7 @@
 	<title>Login</title>
      <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css')}}">
 </head>
-<body class="bg-warning bg-opacity-75 flex-column d-flex justify-content-center align-items-center vh-100">
+<body class="bg-primary bg-opacity-75 flex-column d-flex justify-content-center align-items-center vh-100">
 	<div class="flex-row justify-content-center">
 		<div class="d-flex justify-content-center align-items-center">
 			<img src="" width="180" class="  rounded-circle mb-2" alt="logo">
@@ -32,7 +32,6 @@
 							<input class="form-control" type="password" id="password" name="password">
 						</div>
 						<button name="login" class="btn btn-primary col-lg-12 mb-2" type="submit">Login</button>
-						<a href="#" class=" mb-1"><u> Reset Password?</u></a>
 					</div>
 				</div>
 			</form>

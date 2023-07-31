@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\TypeController;
+use App\Http\Controllers\LaundryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +41,15 @@ Route::controller(TypeController::class)->name('type.')->group(function () {
         Route::patch('/type/update/{type}', 'updateType')->name('updateType');
         Route::delete('/type/hapus/{type}', 'deleteType')->name('deleteType');
         });
+
+Route::controller(LaundryController::class)->name('transaction.')->group(function () {
+        Route::get('/transaction/transaksi', 'getLaundry')->name('getLaundry');
+        Route::get('/transaction/add-transaksi', 'tambah')->name('tambah');
+        Route::get('/transaction/edit/{user}', 'edit')->name('edit');
+        Route::post('/transaction/simpan', 'saveLaundry')->name('saveLaundry');
+        Route::patch('/transaction/update/{user}', 'updateLaundry')->name('updateLaundry');
+        Route::delete('/transaction/hapus/{user}', 'deleteLaundry')->name('deleteLaundry');
+          });
 
 Route::get('/login',function(){
     return view('login');

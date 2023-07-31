@@ -10,7 +10,7 @@ class TypeController extends Controller
 
     public function getType(Type $type)
     {
-        $datatype = $type->get();
+        $dataType = $type->get();
         return view('type.types', compact('dataType')); 
        
     }

@@ -47,8 +47,8 @@
                                         <input type="text" class="form-control desimal-input" name="name"required>
                                    </div>
                                    <div class="col-lg-12 col-12 mb-2">
-                                        <label class="col-sm-2 col-form-label">Jenis Kelamin <sup class="text-danger">*</sup> </label>
-                                        <div class="col-md-9">
+                                        <label class=" col-form-label">Jenis Kelamin <sup class="text-danger">*</sup> </label>
+                                        <div class="">
                                              <div class="form-check-inline my-1">
                                              <div class="custom-control custom-radio">
                                                   <input type="radio" id="customRadio4" name="gender" class="custom-control-input" value="Laki - laki" checked>
@@ -64,14 +64,14 @@
                                         </div>
                                    </div> 
                                    <div class="col-lg-12 col-12 mb-2">
-                                        <label class="form-label" for="address">Alamat<sup class="text-danger"></sup></label>
+                                        <label class="form-label" for="address">Alamat<sup class="text-danger">*</sup></label>
                                         <div class="col-sm-20">
-                                             <textarea class="col-lg-12" name="address" id="example-text-input" cols="20" rows="5" placeholder="Masukkan Alamat"></textarea>
+                                             <textarea class="col-lg-12" name="address" id="example-text-input" cols="20" rows="5" placeholder="Masukkan Alamat" required></textarea>
                                         </div>
                                    </div>
                                    <div class="col-lg-12 col-12 mb-2">
                                         <label class="form-label" for="nama">No.Telepon <sup class="text-danger">*</sup></label>
-                                        <input type="tel" id="phone" name="phone" value="" class="text-capitalize form-control" >
+                                        <input type="tel" id="phone" name="phone" value="" class="text-capitalize form-control" required>
                                    </div>
                                    <div class="col-lg-12 col-12 mb-2">
                                         <label class="form-label">Jabatan<sup class="text-danger">*</sup></label>
@@ -81,7 +81,7 @@
                                              <option value="Kasir">Kasir</option>
                                         </select>
                                    </div>
-                                   <div class="d-flex justify-content-start mt-5">
+                                   <div class="d-flex justify-content-start mt-5 col-lg-12 col-12 mb-2">
                                         <button type="submit" name="profile" class="btn btn-primary mr-2">Simpan</button>
                                         <button type="reset" class="btn btn-danger mx-2">Batal</button>
                                    </div>

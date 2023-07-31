@@ -31,18 +31,22 @@
                         
                     </div>
                     <div class="card card-body my-3">
-                        <form class="my-3" enctype="multipart/form-data" action="{{route('customer.saveCustomer')}}" method="POST">
+                        <form class="my-3" enctype="multipart/form-data" action="{{route('type.saveType')}}" method="POST">
                             @csrf
                             <input type="hidden" name="id" value="">
                             <div class="col-lg-12 col-12 mb-2 ">
-                                <label class="form-label" for="username">Nama Pelanggan<sup class="text-danger"></sup></label>
-                                <input type="text" id="name" name="name" value="" class="form-control">
+                                <label class="form-label" for="username">Jenis Laundry <sup class="text-danger">*</sup></label>
+                                <input type="text" id="name" name="type_laundry" value=""  placeholder="Masukkan jenis laundry"  class="form-control" required>
+                            </div>
+                            <div class="col-lg-12 col-12 mb-2 ">
+                                <label class="form-label" for="username">Lama Proses (Hari) <sup class="text-danger">*</sup></label>
+                                <input type="text" id="name" name="proces" value=""  placeholder="Masukkan lama proses" class="form-control" required>
                             </div>
                             <div class="col-lg-12 col-12 mb-2">
-                                <label class="form-label" for="phone">No.Telpon<sup class="text-danger"></sup></label>
-                                <input type="text" id="phone" name="phone" value="" class="form-control">
+                                <label class="form-label" for="phone">Tarif (Per Kg) <sup class="text-danger">*</sup></label>
+                                <input type="text" id="phone" name="rates" value=""  placeholder="Masukkan tariff " class="form-control" required>
                             </div>
-                            <div class="d-flex justify-content-start mt-5">
+                            <div class="d-flex justify-content-start col-lg-12 col-12 mb-2 mt-5">
                                 <button type="submit" name="profile" class="btn btn-primary mr-2">Simpan</button>
                                 <button type="reset" class="btn btn-danger mx-2">Batal</button>
                             </div>

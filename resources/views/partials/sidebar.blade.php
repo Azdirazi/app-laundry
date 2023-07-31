@@ -28,18 +28,24 @@
 </div>
 
 <!-- Nav Item - Data User -->
-<li class="nav-item">
-    <a class="nav-link" href="{{ route('user.getUser') }}">
+<li class="nav-item {{ Route::current()->uri == 'users' ? 'active' : '' }}">  
+    <a class="nav-link" href="{{ route('user.getUser')  }}">
         <i class="fa fa-users"></i>
         <span>Data User </span>
     </a>
 </li>
 
 <li class="nav-item">
-    <a class="nav-link" href="{{ route('customer.getCustomer') }}">
+    <a class="nav-link " href="{{ route('customer.getCustomer')  }}">
         <i class="fa fa-users"></i>
         <span>Data Pelanggan </span>
     </a>
+</li>
+
+<li class="nav-item">
+    <a class="nav-link  " href="{{ route('type.getType') }}">
+        <i class="fa fa-key"></i>
+        <span>Jenis Laundry</span></a>
 </li>
 
 <!-- Nav Item - Tables -->

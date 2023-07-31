@@ -35,11 +35,11 @@
                             @csrf
                             <input type="hidden" name="id" value="">
                             <div class="col-lg-12 col-12 mb-2 ">
-                                <label class="form-label" for="username">Nama Pelanggan<sup class="text-danger"></sup></label>
+                                <label class="form-label" for="username">Nama Pelanggan<sup class="text-danger">*</sup></label>
                                 <input type="text" id="name" name="name" value="" class="form-control">
                             </div>
                             <div class="col-lg-12 col-12 mb-2">
-                                <label class="col-sm-2 col-form-label">Jenis Kelamin</label>
+                                <label class="col-sm-2 col-form-label">Jenis Kelamin <sup class="text-danger">*</sup> </label>
                                 <div class="col-md-9">
                                     <div class="form-check-inline my-1">
                                         <div class="custom-control custom-radio">
@@ -56,13 +56,13 @@
                                 </div>
                             </div> 
                             <div class="col-lg-12 col-12 mb-2">
-                                <label class="form-label" for="address">Alamat<sup class="text-danger"></sup></label>
+                                <label class="form-label" for="address">Alamat <sup class="text-danger">*</sup></label>
                                 <div class="col-sm-20">
                                      <textarea class="col-lg-12" name="address" id="example-text-input" cols="20" rows="5" placeholder="Masukkan Alamat"></textarea>
                                 </div>
                             </div>
                             <div class="col-lg-12 col-12 mb-2">
-                                <label class="form-label" for="phone">No.Telpon<sup class="text-danger"></sup></label>
+                                <label class="form-label" for="phone">No.Telpon<sup class="text-danger">*</sup></label>
                                 <input type="text" id="phone" name="phone" value="" class="form-control">
                             </div>
                             <div class="d-flex justify-content-start mt-5">

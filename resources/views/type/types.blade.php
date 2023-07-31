@@ -31,7 +31,7 @@
                         
                     </div>
                     <div class="card card-body my-3">
-                            <a href="#" class="btn btn-primary col-lg-4 col-12 mb-4">
+                            <a href="{{ route('type.tambah') }}" class="btn btn-primary col-lg-4 col-12 mb-4">
                                 <span class="fa fa-plus"></span>Tambah Jenis Laundry</a>
                             <h5 class="card-title">Data Jenis Laundry</h5>
                             <div class="table-responsive">
@@ -46,18 +46,18 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($dataUser as $index => $user)
+                                    @foreach($dataType as $index => $type)
                                             <tr>
                                                 <td scope="col">{{ ++$index }}</td>
-                                                <td scope="col">{{ $type->img}}</td>
-                                                <td scope="col">{{ $type->username }}</td>
-                                                <td scope="col">{{ $type->name }}</td>
+                                                <td scope="col">{{ $type->type_laundry}}</td>
+                                                <td scope="col">{{ $type->proces }}</td>
+                                                <td scope="col">{{ $type->rates }}</td>
                                                 <td scope="col">
                                                     <div class="input-group mb-3">
                                                         <span class="input-group-text border-0">
-                                                            <a href="{{route('user.edit',[$user->id])}}" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i>Edit</a>
+                                                            <a href="{{route('type.edit',[$type->id])}}" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i>Edit</a>
                                                         </span><span class="input-group-text border-0">
-                                                            <form onsubmit="return confirm('Data pengguna akan dihapus ?')" action=" {{route('user.deleteUser',$user->id)}}" method="POST" ">
+                                                            <form onsubmit="return confirm('Data pengguna akan dihapus ?')" action=" {{route('type.deleteType',$type->id)}}" method="POST" >
                                                                         @csrf
                                                                         @method('DELETE')
                                                                         <button type=" submit" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Hapus</button>
