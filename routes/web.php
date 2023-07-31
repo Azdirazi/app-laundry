@@ -42,13 +42,13 @@ Route::controller(TypeController::class)->name('type.')->group(function () {
         Route::delete('/type/hapus/{type}', 'deleteType')->name('deleteType');
         });
 
-Route::controller(LaundryController::class)->name('transaction.')->group(function () {
-        Route::get('/transaction/transaksi', 'getLaundry')->name('getLaundry');
-        Route::get('/transaction/add-transaksi', 'tambah')->name('tambah');
-        Route::get('/transaction/edit/{user}', 'edit')->name('edit');
-        Route::post('/transaction/simpan', 'saveLaundry')->name('saveLaundry');
-        Route::patch('/transaction/update/{user}', 'updateLaundry')->name('updateLaundry');
-        Route::delete('/transaction/hapus/{user}', 'deleteLaundry')->name('deleteLaundry');
+Route::controller(LaundryController::class)->name('laundry.')->group(function () {
+        Route::get('/laundry/laundries', 'getLaundry')->name('getLaundry');
+        Route::get('/laundry/add-laundries', 'tambah')->name('tambah');
+        Route::get('/laundry/edit/{laundry}', 'edit')->name('edit');
+        Route::post('/laundry/simpan', 'saveLaundry')->name('saveLaundry');
+        Route::patch('/laundry/update/{laundry}', 'updateLaundry')->name('updateLaundry');
+        Route::delete('/laundry/hapus/{laundry}', 'deleteLaundry')->name('deleteLaundry');
           });
 
 Route::get('/login',function(){

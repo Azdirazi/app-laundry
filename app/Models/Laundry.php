@@ -10,7 +10,7 @@ class Laundry extends Model
     use HasFactory;
 
     protected $table = 'laundries';
-    
+    protected $primaryKey="id";
     protected $fillable = [
         'customers_id',
         'users_id',
@@ -24,5 +24,17 @@ class Laundry extends Model
         'retrieval_status', 
     ];
 
+    public function User()
+    {
+        return $this->hasOne(User::class);
+    }
 
+    public function Type()
+    {
+        return $this->hasOne(Type::class);
+    }
+    public function Costumer()
+    {
+        return $this->hasOne(Costumer::class);
+    }
 }

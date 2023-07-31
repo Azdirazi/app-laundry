@@ -31,7 +31,7 @@
                         
                     </div>
                     <div class="card card-body my-3">
-                            <a href="#" class="btn btn-primary col-lg-4 col-12 mb-4">
+                            <a href="{{ route('laundry.tambah') }}" class="btn btn-primary col-lg-4 col-12 mb-4">
                                 <span class="fa fa-plus"></span>Tambah Pelanggan</a>
                             <div class="col-lg-12 pl-0">
                                 <a href="#" class="btn btn-success col-lg-2 col-6 mb-4">Status Lunas</a>
@@ -54,6 +54,27 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    @foreach($dataLaundry as $index => $laundry)
+                                            <tr>
+                                                <td scope="col">{{ ++$index }}</td>
+                                                <td scope="col">{{ $laundry->customers_id }}</td>
+                                                <td scope="col"></td>
+                                                <td scope="col"></td>
+                                                <td scope="col">
+                                                    <div class="input-group mb-3">
+                                                        <span class="input-group-text border-0">
+                                                            <a href="{{route('type.edit',[$type->id])}}" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i>Edit</a>
+                                                        </span><span class="input-group-text border-0">
+                                                            <form onsubmit="return confirm('Data pengguna akan dihapus ?')" action=" {{route('type.deleteType',$type->id)}}" method="POST" >
+                                                                        @csrf
+                                                                        @method('DELETE')
+                                                                        <button type=" submit" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Hapus</button>
+                                                            </form>
+                                                        </span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
