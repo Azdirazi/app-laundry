@@ -10,4 +10,9 @@ class TypeController extends Controller
     {
         //
     }
+
+    public function create()
+    {
+        //
+    }
 }
