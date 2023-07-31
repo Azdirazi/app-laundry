@@ -20,4 +20,9 @@ class LaundryController extends Controller
     {
         //
     }
+
+    public function show(string $id)
+    {
+        //
+    }
 }
