@@ -49,4 +49,5 @@ class UserController extends Controller
         $user->update($data);
         return redirect(route('user.getUser'))->with('success', 'Data user berhasil diubah');
     }
+    
 }

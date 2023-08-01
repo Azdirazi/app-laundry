@@ -13,7 +13,7 @@ class LaundryController extends Controller
      
     public function getLaundry(Laundry $laundry)
     {
-        $dataLaundry = Laundry::with('User', 'Type', 'Costumer')->get();
+        $dataLaundry = Laundry::with('Type', 'Costumer')->get();
         return view('laundry.laundries', compact('dataLaundry')); 
        
     }
@@ -33,6 +33,12 @@ class LaundryController extends Controller
     public function saveLaundry(Laundry $laundry, Request $laundryRequest)
     {
         $data = $laundryRequest->all();
+        // ambil data type
+        $dataType =Type::find($data['types_id']);
+        $data['total_pay']=$dataType['rates'] * $data['heavy'];
+        $data['proces'] = "PENDING";
+        //membuat perhitungan bayar
+       
         $laundry->create($data);
         return redirect(route('laundry.getLaundry'))->with('success', 'Data user berhasil ditambahkan');
     }
@@ -48,4 +54,5 @@ class LaundryController extends Controller
         $laundry->update($data);
         return redirect(route('laundry.getLaundry'))->with('success', 'Data user berhasil diubah');
     }
+    
 }

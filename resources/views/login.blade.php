@@ -11,9 +11,6 @@
 </head>
 <body class="bg-primary bg-opacity-75 flex-column d-flex justify-content-center align-items-center vh-100">
 	<div class="flex-row justify-content-center">
-		<div class="d-flex justify-content-center align-items-center">
-			<img src="" width="180" class="  rounded-circle mb-2" alt="logo">
-		</div>
 		<h4 class="text-center text-dark">Manajemen Laundry</h4>
 	</div>  
 	<div class="mx-lg-3 mx-1 my-2 py-lg-3  col-lg-6 card rounded login  ">

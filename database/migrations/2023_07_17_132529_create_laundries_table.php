@@ -28,13 +28,11 @@ return new class extends Migration
                 ->on('types')
                 ->onDelete('CASCADE')
                 ->onUpdate('CASCADE');
-            $table->date("do_receipt");
-            $table->date("do_completion");
+            $table->string("proces");
             $table->integer("heavy",);
             $table->tinyText('notes');
             $table->integer("total_pay");
             $table->integer("pay_status");
-            $table->integer("retrieval_status");
             $table->timestamps();
             
         });

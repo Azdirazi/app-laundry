@@ -13,15 +13,12 @@ class Laundry extends Model
     protected $primaryKey="id";
     protected $fillable = [
         'customers_id',
-        'users_id',
         'types_id',
-        'do_receipt',
-        'do_completion',
+        'proces',
         'heavy',
         'notes',
         'total_pay',
         'pay_status',
-        'retrieval_status', 
     ];
 
     public function User()
@@ -31,10 +28,10 @@ class Laundry extends Model
 
     public function Type()
     {
-        return $this->hasOne(Type::class);
+        return $this->hasOne(Type::class, "id", "types_id");
     }
     public function Costumer()
     {
-        return $this->hasOne(Costumer::class);
+        return $this->hasOne(Customer::class, "id", "customers_id");
     }
 }

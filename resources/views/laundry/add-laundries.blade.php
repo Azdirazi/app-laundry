@@ -31,11 +31,12 @@
                         
                     </div>
                     <div class="card card-body my-3">
-                        <form class="my-3" enctype="multipart/form-data" action="" method="Post">
+                        <form class="my-3" enctype="multipart/form-data" action="{{ route('laundry.saveLaundry')}}" method="POST">
+                            @csrf
                             <input type="hidden" name="id" value="">
                             <div class="col-lg-12 col-12 mb-2">
                                 <label class="form-label" for="username">Nama Pelanggan<sup class="text-danger">*</sup></label>
-                                <select name="costumers_id" class="js-example-basic-single form-control"  required id="alternatif-kode-petani">
+                                <select name="customers_id" class="js-example-basic-single form-control"  required id="alternatif-kode-petani">
                                         @foreach ( $dataCustomer as $index):?>
                                             <option value="{{$index->id}}">{{$index->name}}</option>
                                         @endforeach;?>
@@ -50,21 +51,10 @@
                                 </select>
                             </div>
                             <div class="col-lg-12 col-12 mb-2">
-                                <label class="form-label" for="username">Tarif (Hari)<sup class="text-danger">*</sup></label>
-                                <input type="text" id="Nama Pelanggan"  value="" class="form-control"readonly>
-                            </div>
-                            <div class="col-lg-12 col-12 mb-2"> 
-                                <label class="form-label" for="username">Tgl. Selesai<sup class="text-danger">*</sup></label>
-                                <input type="text" id="" name="" value="" class="form-control" readonly>
-                            </div>
-                            <div class="col-lg-12 col-12 mb-2">
                                 <label class="form-label" for="username">Jumlah(Kg) <sup class="text-danger">*</sup></label>
                                 <input type="text" id="Nama Pelanggan" name="heavy" value="" class="form-control" required>
                             </div>
-                            <div class="col-lg-12 col-12 mb-2">
-                                <label class="form-label" for="username">Total Bayar<sup class="text-danger">*</sup></label>
-                                <input type="text" id="" name="total_pay" value="" class="form-control" required>
-                            </div>
+                            
                             <div class="col-lg-12 col-12 mb-2">
                                 <label class="form-label" for="username">Catatan<sup class="text-danger">*</sup></label>
                                 <div class=" col-sm-20">
@@ -74,8 +64,8 @@
                             <div class="col-lg-12 col-12 mb-2">
                                 <label class="form-label" for="status">Status<sup class="text-danger">*</sup></label>
                                 <select name="pay_status" class="js-example-basic-single form-control"  required >
-                                        <option value="Belum Lunas">Belum Lunas</option>
-                                        <option value="Lunas">Lunas</option>
+                                        <option value="0">Belum Lunas</option>
+                                        <option value="1">Lunas</option>
                                 </select>
                             </div>
                             </div>
@@ -110,7 +100,38 @@
     @include('partials.logout_modal')
 
     @include('partials.js')
+    
+    <script>
+        var tanggalInput = document.getElementById("tanggalInput");
 
+// Menambahkan event listener untuk mendengarkan perubahan pada input tanggal
+tanggalInput.addEventListener("change", function() {
+  tambahHari();
+});
+
+function tambahHari() {
+  var tanggal = new Date(tanggalInput.value);
+  
+  // Memastikan tanggal yang valid telah dimasukkan
+  if (isNaN(tanggal)) {
+    console.log("Masukkan tanggal yang valid.");
+    return;
+  }
+
+  // Menambahkan hari (misalnya, 3 hari) ke tanggal
+  var jumlahHari = 3;
+  tanggal.setDate(tanggal.getDate() + jumlahHari);
+
+  // Mengubah format tanggal menjadi "YYYY-MM-DD" untuk input value
+  var tahun = tanggal.getFullYear();
+  var bulan = String(tanggal.getMonth() + 1).padStart(2, "0");
+  var tanggalBaru = String(tanggal.getDate()).padStart(2, "0");
+  var tanggalFormatBaru = tahun + "-" + bulan + "-" + tanggalBaru;
+
+  // Mengatur nilai input dengan tanggal yang sudah ditambahkan
+  tanggalInput.value = tanggalFormatBaru;
+}
+    </script>
 </body>
 
 </html>

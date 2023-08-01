@@ -28,7 +28,7 @@
 </div>
 
 <!-- Nav Item - Data User -->
-<li class="nav-item {{ Route::current()->uri == 'users' ? 'active' : '' }}">  
+<li class="">  
     <a class="nav-link" href="{{ route('user.getUser')  }}">
         <i class="fa fa-users"></i>
         <span>Data User </span>
